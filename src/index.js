@@ -5,11 +5,21 @@ import App from "./App";
 import arr from "./CardData";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const resultData = function(currentValue){
+  return(
+  <App 
+  pic = {currentValue.pic}
+  title ={currentValue.title}
+  name = {currentValue.name}
+  link ={currentValue.link}
+  />)
 
+}
 root.render(
   <>
   <h1 className="heading">Top Movies On Netflix</h1>
-    <App
+  {arr.map(resultData)}
+    {/* <App
       pic={arr[0].pic}
       title={arr[0].title}
       name={arr[0].name}
@@ -44,7 +54,7 @@ root.render(
       title={arr[5].title}
       name={arr[5].name}
       link={arr[5].link}
-    />
+    /> */}
     
   </>
 );
